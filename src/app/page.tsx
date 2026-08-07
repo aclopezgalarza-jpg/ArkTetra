@@ -1,69 +1,225 @@
-import Image from "next/image";
+const services = [
+  {
+    number: "01",
+    title: "Diseño arquitectónico",
+    description:
+      "Conceptualización y desarrollo de propuestas arquitectónicas con una visión integral del espacio.",
+  },
+  {
+    number: "02",
+    title: "Planos arquitectónicos",
+    description:
+      "Desarrollo de plantas, cortes, elevaciones y documentación gráfica para proyectos arquitectónicos.",
+  },
+  {
+    number: "03",
+    title: "Modelado 3D",
+    description:
+      "Construcción digital de proyectos para estudiar volumen, materialidad, escala y espacialidad.",
+  },
+  {
+    number: "04",
+    title: "Renderización",
+    description:
+      "Visualizaciones arquitectónicas de alta calidad para comunicar la intención y atmósfera del proyecto.",
+  },
+];
+
+const projectTypes = [
+  "Casas",
+  "Hoteles",
+  "Restaurantes",
+  "Centros comerciales",
+  "Interiores",
+  "Oficinas",
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main>
+      {/* NAVIGATION */}
+      <header className="ark-header">
+        <a href="#" className="ark-logo">
+          ARK<span>TETRA</span>
+        </a>
+
+        <nav className="ark-nav">
+          <a href="#proyectos">Proyectos</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <a href="#contacto" className="ark-header-button">
+          Iniciar proyecto
+        </a>
+      </header>
+
+      {/* HERO */}
+      <section className="ark-hero">
+        <div className="ark-hero-content">
+          <p className="ark-eyebrow">ESTUDIO DE ARQUITECTURA</p>
+
+          <h1>
+            Espacios que
+            <br />
+            <span>trascienden.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="ark-hero-description">
+            Diseñamos arquitectura, desarrollamos espacios y construimos
+            experiencias a través del diseño, el modelado 3D y la
+            visualización arquitectónica.
+          </p>
+
+          <div className="ark-hero-actions">
+            <a href="#proyectos" className="ark-button ark-button-primary">
+              Explorar proyectos
+            </a>
+
+            <a href="#servicios" className="ark-button ark-button-secondary">
+              Ver servicios
+            </a>
+          </div>
+        </div>
+
+        <div className="ark-hero-visual">
+          <div className="ark-hero-grid" />
+
+          <div className="ark-hero-frame">
+            <span>ARK / 001</span>
+            <span>ARCHITECTURE</span>
+          </div>
+
+          <div className="ark-hero-circle" />
+
+          <div className="ark-hero-line" />
+        </div>
+
+        <div className="ark-hero-meta">
+          <span>01</span>
+          <span>SCROLL TO EXPLORE</span>
+        </div>
+      </section>
+
+      {/* INTRO */}
+      <section id="nosotros" className="ark-intro">
+        <div className="ark-section-label">
+          <span>01</span>
+          <span>MANIFIESTO</span>
+        </div>
+
+        <div className="ark-intro-content">
+          <p>
+            En <strong>ARKTETRA</strong> entendemos la arquitectura como una
+            combinación entre concepto, precisión y experiencia.
+          </p>
+
+          <p className="ark-intro-small">
+            Desde la primera idea hasta la visualización final, integramos
+            diseño arquitectónico, documentación, modelado tridimensional y
+            renderización en un mismo proceso.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="proyectos" className="ark-projects">
+        <div className="ark-section-heading">
+          <div className="ark-section-label">
+            <span>02</span>
+            <span>ÁREAS DE PROYECTO</span>
+          </div>
+
+          <h2>
+            Arquitectura
+            <br />
+            <em>sin límites.</em>
+          </h2>
         </div>
-      </main>
-    </div>
+
+        <div className="ark-project-grid">
+          {projectTypes.map((project, index) => (
+            <article className="ark-project-card" key={project}>
+              <div className="ark-project-number">
+                0{index + 1}
+              </div>
+
+              <div className="ark-project-visual">
+                <div className="ark-project-shape" />
+              </div>
+
+              <div className="ark-project-info">
+                <h3>{project}</h3>
+                <span>Explorar →</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="servicios" className="ark-services">
+        <div className="ark-section-label">
+          <span>03</span>
+          <span>SERVICIOS</span>
+        </div>
+
+        <div className="ark-services-heading">
+          <h2>
+            Del concepto
+            <br />
+            <em>a la realidad.</em>
+          </h2>
+
+          <p>
+            Un proceso integrado para desarrollar y comunicar proyectos
+            arquitectónicos con claridad.
+          </p>
+        </div>
+
+        <div className="ark-services-list">
+          {services.map((service) => (
+            <article className="ark-service" key={service.number}>
+              <span>{service.number}</span>
+
+              <div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+
+              <span className="ark-service-arrow">↗</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="contacto" className="ark-contact">
+        <p className="ark-eyebrow">NUEVO PROYECTO</p>
+
+        <h2>
+          Hagamos algo
+          <br />
+          <em>extraordinario.</em>
+        </h2>
+
+        <a href="mailto:contacto@arktetra.com" className="ark-button ark-button-light">
+          Hablemos de tu proyecto
+        </a>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="ark-footer">
+        <div>
+          <a href="#" className="ark-logo">
+            ARK<span>TETRA</span>
+          </a>
+          <p>Arquitectura · 3D · Visualización</p>
+        </div>
+
+        <p>© 2026 ARKTETRA. Todos los derechos reservados.</p>
+      </footer>
+    </main>
   );
 }
